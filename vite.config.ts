@@ -12,6 +12,7 @@ export default defineConfig({
         enabled: true,
       },
       manifest: {
+        name: 'Quotes Saver',
         theme_color: '#58AAEC',
         icons: [
           {
