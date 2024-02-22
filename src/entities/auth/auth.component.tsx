@@ -1,4 +1,4 @@
-import { GoogleAuthProvider, getAuth, signInAnonymously, signInWithPopup, signInWithRedirect, signOut } from 'firebase/auth'
+import { GoogleAuthProvider, getAuth, signInWithPopup, signOut } from 'firebase/auth'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { initializeApp } from 'firebase/app'
 import { Button } from 'react-daisyui'

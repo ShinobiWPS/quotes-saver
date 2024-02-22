@@ -23,6 +23,9 @@ export default antfu(
       JsxA11y,
       tailwind,
     },
-    rules: { 'style/jsx-one-expression-per-line': ['off'] },
+    rules: {
+      'style/jsx-one-expression-per-line': ['off'],
+      'no-unused-vars': ['error'],
+    },
   },
 )
