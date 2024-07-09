@@ -1,4 +1,4 @@
-import { getAuth, signInAnonymously, signOut } from 'firebase/auth'
+import { GoogleAuthProvider, getAuth, signInWithPopup, signOut } from 'firebase/auth'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { initializeApp } from 'firebase/app'
 import { Button } from 'react-daisyui'
@@ -15,14 +15,14 @@ const firebaseConfig = {
 initializeApp(firebaseConfig)
 
 const auth = getAuth()
-// const provider = new GoogleAuthProvider()
+const provider = new GoogleAuthProvider()
 
 function AuthButton() {
   const [user, loading, error] = useAuthState(auth)
 
   const handleSignInAnonymous = async () => {
     try {
-      await signInAnonymously (auth /* ,provider */)
+      await signInWithPopup (auth, provider)
     }
     catch (error) {
       console.error('Error signing in:', error)
@@ -57,7 +57,7 @@ function AuthButton() {
   return (
     <div>
       {/* eslint-disable-next-line ts/no-misused-promises */}
-      <Button onClick={handleSignInAnonymous}>🥸Sign In as Anonymous</Button>
+      <Button onClick={handleSignInAnonymous}>🗝️Sign In</Button>
     </div>
   )
 }
